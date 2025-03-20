@@ -2,6 +2,7 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { Footer } from "../components/Footer";
 import { Main } from "../components/Main";
+import { Header } from "../components/Header";
 
 export default function Home() {
   return (
@@ -10,19 +11,9 @@ export default function Home() {
         <title> About Page</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-    <Main page="about"/>
-
-      <Footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <img src="/vercel.svg" alt="Vercel" className={styles.logo} />
-        </a>
-      </Footer>
+      <Header />
+      <Main page="about" />
+      <Footer />
     </div>
   );
 }
