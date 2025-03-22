@@ -32,7 +32,7 @@ export default function Home() {
         <title>Index Page</title>
       </Head>
       <Header />
-      <h1>{foo}</h1>
+      <h1>{count}</h1>
       <button onClick={handleClick}>ボタン</button>
       <Main page="index" />
       <Footer />
