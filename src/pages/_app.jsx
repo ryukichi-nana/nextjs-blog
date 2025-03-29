@@ -1,22 +1,15 @@
 import Head from "next/head";
 import "src/styles/global.css";
-import { useCounter } from "src/hooks/useCounter";
-import { useInputArray } from "src/hooks/useInputArray";
-import { useBgColor } from "src/hooks/useBgColor";
 
-const  MyApp = ({ Component, pageProps }) => {
-    const counter = useCounter();
-    const inputArray = useInputArray();
-    useBgColor();
-
+const MyApp = ({ Component, pageProps }) => {
   return (
     <>
-        <Head>
+      <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Component {...pageProps} {...counter} {...inputArray} />
+      <Component {...pageProps} />
     </>
   );
-}
+};
 
 export default MyApp;
