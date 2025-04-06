@@ -3,6 +3,7 @@ import { useUser } from "src/hooks/useUser";
 
 export const UserComponent = () => {
   const { data, error, isLoading } = useUser();
+
   if (isLoading) {
     return <div>Loading...</div>;
   }

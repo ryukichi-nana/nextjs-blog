@@ -3,7 +3,7 @@ import { useUsers } from "src/hooks/useFetchArray";
 
 export const UsersComponent = () => {
     const { data, error, isLoading, isEmpty } = useUsers();
-  
+    
     if (isLoading) {
       return <p>Loading...</p>;
     }
