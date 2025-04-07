@@ -3,7 +3,7 @@ import { Layout } from "src/components/Layout";
 import "src/styles/global.css";
 import { SWRConfig } from "swr";
 
-const fetcher =async (...args) => {
+const fetcher = async (...args) => {
   const res = await fetch(...args);
   const json = await res.json();
   return json;
