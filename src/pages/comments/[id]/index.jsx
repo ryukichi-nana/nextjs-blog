@@ -4,9 +4,7 @@ import { API_URL } from "src/util/const";
 import { SWRConfig } from "swr";
 
 export const getStaticPaths = async () => {
-  const comments = await fetch(
-    `${API_URL}/comments?_limit=10`
-  );
+  const comments = await fetch(`${API_URL}/comments?_limit=10`);
   const commentsData = await comments.json();
   const paths = commentsData.map((comment) => ({
     params: { id: comment.id.toString() },
@@ -23,6 +21,7 @@ export const getStaticProps = async (ctx) => {
   if (!comment.ok) {
     return {
       notFound: true,
+      revalidate: 10,
     };
   }
 
@@ -34,6 +33,7 @@ export const getStaticProps = async (ctx) => {
         [COMMENT_API_URL]: commentData,
       },
     },
+    revalidate: 1,
   };
 };
 
